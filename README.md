@@ -1,2 +1,2 @@
-# SweetNotebook
+# Mapley
 Jekyll Theme
