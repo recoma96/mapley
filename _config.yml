@@ -14,6 +14,10 @@ theme: minima
 plugins:
   - jekyll-feed
 
+# user info
+username: Vector7
+introduce: "Fullstack Developer(DJango & ReactJS), Classical Composer, Jekyll Designer"
+
 markdown: kramdown
 kramdown:
   input: GFM

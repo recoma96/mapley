@@ -10,6 +10,8 @@
                 <div class="user-layer">
                     <center>
                         <img class="user-image" alt="user image"/>
+                        <h1 class="title-layer">{{ site.username }}</h1>
+                        <h3 class="introduce-layer">{{ site.introduce }}</h3>
                     </center>
                 </div>
                 <!-- Book Area -->
@@ -18,17 +20,12 @@
                         <center>
                             <h1>{{ page.title }}</h1>
                             <div class="title-line"></div>
+                            <img class="index-image" src="{{ page.profile_picture.src }}" />
                         </center>
                         {{ content }}
                     </div>
                 </div>
-                
-                <!-- post paper area -->
-                <div class="content-post-layer">
-                    <div class="papaer" id="index">index</div>
-                    <div class="papaer" id="contents">contents</div>
-                    <div class="papaer" id="diary">diary</div>
-                </div>
+                {% include postpaper-navbar.html %}
             </div>
             <!-- On Mobile -->
         </div>
