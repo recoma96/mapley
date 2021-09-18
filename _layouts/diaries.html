@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    {% include head.html %}
+    <body>
+        <!-- Content Area -->
+        <div class="content-layer">
+            <!-- On Desktop -->
+            <div class="desktop-area">
+                <!-- User Area -->
+                <div class="user-layer">
+                    <center>
+                        <img class="user-image" alt="user image"/>
+                        <h1 class="title-layer">{{ site.username }}</h1>
+                        <h3 class="introduce-layer">{{ site.introduce }}</h3>
+                    </center>
+                </div>
+                <!-- Book Area -->
+                <div class="book-cover-layer">
+                    <div class="paper-layer">
+                        <center>
+                            <h1>Diary</h1>
+                            <p>This Layout is been like contents post. but It supposed posts like essay and diary</p>
+                        </center>
+                        
+                        {% assign posts = site.posts | sort: "date" | reverse %}
+                        {% for post in posts %}
+                            <!-- Get Only Type Diary -->
+                            {% if post.type == "diary" %}
+                                <!-- Get Prrint -->
+                                {% assign date_format = post.date | date: "%Y.%-m.%-d" %}
+                                {% assign title = date_format | append: " - " | append: post.title %}
+
+                                <!-- Make url -->
+                                {% assign diary_url = post.url | replace:".html","" | prepend: site.url %}
+                                    
+                                <p class="diary-text-item">
+                                    <a href={{ diary_url }} >{{ title }}</a>
+                                </p>
+                            {% endif %}
+                        {% endfor %}
+                        <div class="content-page-layer">
+                            {% include footer.html %}
+                        </div>
+                    </div>
+                </div>
+                {% include postpaper-navbar.html %}
+            </div>
+            <!-- On Mobile -->
+        </div>
+    </body>
+</html>

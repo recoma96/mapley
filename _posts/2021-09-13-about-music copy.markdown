@@ -2,6 +2,7 @@
 layout: post
 title:  "About Music!"
 date:   2021-09-13 02:02:44 +0900
+type: contents
 category: music
 ---
 

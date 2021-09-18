@@ -34,37 +34,42 @@
 
                             {% for post in posts %}
 
-                                {% if last_post == "" or last_post.category != post.category %}
-                                    <!-- Make Margin For Not First Category -->
-                                    {% if last_post != "" %}
-                                    <div class="empty-in-contents-page"></div>
+                                {% if post.type == "contents" %}
+                                    <!-- Get Only Contents post not diary -->
+                                    {% if last_post == "" or last_post.category != post.category %}
+                                        <!-- Make Margin For Not First Category -->
+                                        {% if last_post != "" %}
+                                        <div class="empty-in-contents-page"></div>
+                                        {% endif %}
+
+                                        <!-- serach new category -->
+                                        {% assign category_index = category_index | plus: 1 %}
+                                        {% assign post_index = 0 %}
+                                    
+                                        {% assign category_print = category_index | append: ". " | append: post.category %}
+                                        <h2>{{ category_print }}</h2>
+                                        <div class="category-line"></div>
                                     {% endif %}
 
-                                    <!-- serach new category -->
-                                    {% assign category_index = category_index | plus: 1 %}
-                                    {% assign post_index = 0 %}
-                                    
-                                    {% assign category_print = category_index | append: ". " | append: post.category %}
-                                    <h2>{{ category_print }}</h2>
-                                    <div class="category-line"></div>
+                                    <!-- Up counter post index -->
+                                    {% assign post_index = post_index | plus: 1 %}
+
+                                    <!-- Make Title Print format-->
+                                    {% assign post_numbering_print = category_index | append: "." | append: post_index %}
+                                    {% assign post_title_print = post_numbering_print | append: " " | append: post.title %}
+
+                                    <!-- Make url -->
+                                    {% assign content_url = post.url | replace:".html","" | prepend: site.url %}
+
+                                    <!-- Print it -->
+                                    <p class="contents-text-item">
+                                        <a href="{{ content_url }}" class="a-tag-in-contents-page">{{ post_title_print }}</a>
+                                    </p>
+
+                                    <!-- Save buffer of post -->
+                                    {% assign last_post = post %}
+
                                 {% endif %}
-
-                                <!-- Up counter post index -->
-                                {% assign post_index = post_index | plus: 1 %}
-
-                                <!-- Make Title Print format-->
-                                {% assign post_numbering_print = category_index | append: "." | append: post_index %}
-                                {% assign post_title_print = post_numbering_print | append: " " | append: post.title %}
-
-                                <!-- Make url -->
-
-                                <!-- Print it -->
-                                <p class="contents-text-item">
-                                    <a href="{{ post.url | replace:".html","" | prepend: site.url }}" class="a-tag-in-contents-page">{{ post_title_print }}</a>
-                                </p>
-
-                                <!-- Save buffer of post -->
-                                {% assign last_post = post %}
                             {% endfor %}
                             
                             {% include footer.html %}

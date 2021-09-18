@@ -1,0 +1,17 @@
+.diary-font-edition {
+    // headings
+    h1,h2,h3,h4,h5,h6 {
+        font-family: $diary-font-family;
+    }
+
+    p, blockquote,
+    ul, ol, dl,
+    figure, em, u {
+        font-family: $diary-font-family;
+        font-size: 1.1em;
+    }
+}
+
+.diary-text-item {
+    margin-bottom: -10px;
+}

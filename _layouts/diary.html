@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    {% include head.html %}
+    <body>
+        <!-- Content Area -->
+        <div class="content-layer">
+            <!-- On Desktop -->
+            <div class="desktop-area">
+                <!-- User Area -->
+                <div class="user-layer">
+                    <center>
+                        <img class="user-image" alt="user image"/>
+                        <h1 class="title-layer">{{ site.username }}</h1>
+                        <h3 class="introduce-layer">{{ site.introduce }}</h3>
+                    </center>
+                </div>
+                <!-- Book Area -->
+                <div class="book-cover-layer">
+                    <div class="paper-layer">
+                        <center>
+                            <h1>{{ page.title }}</h1>
+                        </center>
+
+                        <!-- Date -->
+                        <p class="post-date">{{ page.date | date: "%Y.%-m.%-d" }}</p>
+                        <div class="post-start-line"></div>
+
+                        <div class="diary-font-edition">{{ content }}</div>
+
+                        <div class="post-tag-badge-layer">
+                            {% for tag in page.tags %}
+                                <p class="tag-badge post-tag-item">{{ tag }}</p>
+                            {% endfor %}
+                        </div>
+                        
+                        {% include footer.html %}
+                    </div>
+                </div>
+                {% include postpaper-navbar.html %}
+            </div>
+            <!-- On Mobile -->
+        </div>
+    </body>
+</html>
