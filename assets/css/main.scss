@@ -16,10 +16,19 @@ $post-tape-font-family: 'Hi Melody', cursive; // 우측 포스트 테입 폰트
 $body-wallpaper: url('{{ site.baseurl }}/assets/img/wallpaper.jpg');
 
 // media width
-$on-desktop: 900px;
-$on-mobile: 0px;
-@mixin media-query($device) {
-    @media screen and (min-width: $device) {
+$media-line-width: 900px;
+
+// Color
+$book-cover-color: #560906;
+$book-paper-color: #FFF8E9;
+
+@mixin media-query-in-desktop() {
+    @media screen and (min-width: $media-line-width) {
+        @content;
+    }
+}
+@mixin media-query-in-mobile() {
+    @media screen and (max-width: $media-line-width) {
         @content;
     }
 }
