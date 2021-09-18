@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    {% include head.html %}
+    <body>
+        <!-- Content Area -->
+        <div class="content-layer">
+            <!-- On Desktop -->
+            <div class="desktop-area">
+                <!-- User Area -->
+                <div class="user-layer">
+                    <center>
+                        <img class="user-image" alt="user image"/>
+                        <h1 class="title-layer">{{ site.username }}</h1>
+                        <h3 class="introduce-layer">{{ site.introduce }}</h3>
+                    </center>
+                </div>
+                <!-- Book Area -->
+                <div class="book-cover-layer">
+                    <div class="paper-layer">
+                        <center>
+                            <h1>Contents</h1>
+                        </center>
+
+                        <div class="content-page-layer">
+                            {% assign posts = site.posts | sort: "category" %}
+                            <h1>{{ categories }}</h1>
+                            
+                            <!-- Last post for search new Category -->
+                            {% assign last_post = "" %}
+
+                            <!-- index of category and post -->
+                            {% assign category_index = 0 %}
+                            {% assign post_index = 0 %}
+
+                            {% for post in posts %}
+
+                                {% if last_post == "" or last_post.category != post.category %}
+                                    <!-- Make Margin For Not First Category -->
+                                    {% if last_post != "" %}
+                                    <div class="empty-in-contents-page"></div>
+                                    {% endif %}
+
+                                    <!-- serach new category -->
+                                    {% assign category_index = category_index | plus: 1 %}
+                                    {% assign post_index = 0 %}
+                                    
+                                    {% assign category_print = category_index | append: ". " | append: post.category %}
+                                    <h2>{{ category_print }}</h2>
+                                    <div class="category-line"></div>
+                                {% endif %}
+
+                                <!-- Up counter post index -->
+                                {% assign post_index = post_index | plus: 1 %}
+
+                                <!-- Make Title Print format-->
+                                {% assign post_numbering_print = category_index | append: "." | append: post_index %}
+                                {% assign post_title_print = post_numbering_print | append: " " | append: post.title %}
+
+                                <!-- Make url -->
+
+                                <!-- Print it -->
+                                <p><a href="{{ post.url | replace:".html","" | prepend: site.url }}" class="a-tag-in-contents-page">{{ post_title_print }}</a></p>
+
+                                <!-- Save buffer of post -->
+                                {% assign last_post = post %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                {% include postpaper-navbar.html %}
+            </div>
+            <!-- On Mobile -->
+        </div>
+    </body>
+</html>
