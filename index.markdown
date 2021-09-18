@@ -4,6 +4,9 @@
 
 layout: index
 title: Welcome Mapley Home
+profile_picture:
+    src: /assets/img/content/index-img.jpg
+    alt: website picture
 ---
 
 # H1 Markdown
