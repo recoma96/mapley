@@ -59,7 +59,9 @@
                                 <!-- Make url -->
 
                                 <!-- Print it -->
-                                <p><a href="{{ post.url | replace:".html","" | prepend: site.url }}" class="a-tag-in-contents-page">{{ post_title_print }}</a></p>
+                                <p class="contents-text-item">
+                                    <a href="{{ post.url | replace:".html","" | prepend: site.url }}" class="a-tag-in-contents-page">{{ post_title_print }}</a>
+                                </p>
 
                                 <!-- Save buffer of post -->
                                 {% assign last_post = post %}

@@ -54,10 +54,23 @@ code {
 body {
     background-image: $body-wallpaper;
     background-size: cover;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
+    margin: -10px 0;
 }
-// body opacity
+
+// tag badge
+.tag-badge {
+    background-color: $default-badge-color;
+    color: white;
+    font-size: 1.2em;
+    font-family: $tag-badge-font-family;
+    border-radius: 3px;
+    padding: 0px 10px 0px 10px;
+    box-shadow: 2px 1px 2px black;
+    margin-left: 3px;
+}
+
 .content-layer {
     width: 100%;
     height: 100%;
@@ -106,8 +119,8 @@ body {
 
     // In book area
     .book-cover-layer {
-        height: 90vh;
-        width: 800px;
+        height: 88vh;
+        width: 700px;
         background-color: $book-cover-color;
     
         margin-left: 20px;

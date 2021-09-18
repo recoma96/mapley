@@ -15,6 +15,7 @@ $user-info-font-family: 'Song Myung', serif; // 좌측 블로그 운영자 정�
 $post-papaer-font-family: 'Hi Melody', cursive; // 우측 포스트 테입 폰트
 $diary-font-family: 'Hi Melody', cursive; // 다이어리 전용 폰트
 $code-font-family: 'Nanum Gothic Coding', monospace; //코드 폰트
+$tag-badge-font-family: 'Hi Melody', cursive; // 태그 뱃지 전용 폰트
 
 // body wallpaper
 $body-wallpaper: url('{{ site.baseurl }}/assets/img/wallpaper.jpg');
@@ -23,6 +24,7 @@ $user-image: url('{{ site.baseurl }}/assets/img/user.gif');
 // Color
 $book-cover-color: #560906;
 $book-paper-color: #FFF8E9;
+$default-badge-color: #570A06;
 
 $post-paper-index-color: #FFF4AB;
 $post-paper-contents-color: #D0FFC7;
@@ -53,4 +55,4 @@ $media-line-width-mobile: 760px;
 }
 
 // import _sass
-@import "base", "code", "index", "contents";
+@import "base", "code", "home", "contents", "post";
