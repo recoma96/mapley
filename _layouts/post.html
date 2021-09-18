@@ -26,15 +26,14 @@
                         <p class="post-date">{{ page.date | date: "%Y.%-m.%-d" }}</p>
                         <div class="post-start-line"></div>
                         {{ content }}
-                        <div class="post-end-line"></div>
-                        <!-- content end -->
                         
-                        <!-- Tag -->
                         <div class="post-tag-badge-layer">
                             {% for tag in page.tags %}
                                 <p class="tag-badge post-tag-item">{{ tag }}</p>
                             {% endfor %}
                         </div>
+
+                        {% include footer.html %}
                     </div>
                 </div>
                 {% include postpaper-navbar.html %}
