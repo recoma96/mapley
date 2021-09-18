@@ -101,3 +101,9 @@ sudo docker run -it -d -p [port]:[port] \
         PS: X:\project/bin> perl setConfigure-mysql.pl [storage root] [port] [host] [email] `
         >> [db-host] [db-port] [db-user-name] [db-user-pswd] [db-name]
         ```
+
+```c
+int main(void) {
+    print("hello world");
+}
+```

@@ -27,6 +27,9 @@ $post-paper-index-color: #FFF4AB;
 $post-paper-contents-color: #D0FFC7;
 $post-paper-diary-color: #D1DAFF;
 
+$scroll-background-color: rgba(86, 9, 6, 0.2);
+$scroll-color: rgba(86, 9, 6, 0.4);
+
 
 // media width
 $media-line-width-tablet: 1200px;
@@ -49,4 +52,4 @@ $media-line-width-mobile: 840px;
 }
 
 // import _sass
-@import "base";
+@import "base", "code";

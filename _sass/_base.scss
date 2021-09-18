@@ -6,16 +6,17 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 // normal font
-p, blockquote, pre,
+p, blockquote,
 ul, ol, dl,
 figure {
     font-family: $write-font-family;
-    word-wrap: break-word;
+    line-height: 1.6;
 }
 // code font
 pre, code {
     font-family: $code-font-family;
-    word-wrap: break-word;
+    white-space: pre-wrap;
+    line-height: 1.2;
 }
 
 // body wallpaper
@@ -31,7 +32,7 @@ body {
 .content-layer {
     position: absolute;
     background-color: rgba(0,0,0,0.57);
-    width: 100%;
+    width: 96vw;
     height: 93vh;
     top: 0;
     left: 0;
@@ -60,8 +61,8 @@ body {
 
     // In book area
     .book-cover-layer {
-        height: 850px;
-        width: 700px;
+        height: 95%;
+        width: 800px;
         background-color: $book-cover-color;
     
         margin-left: 20px;
@@ -70,17 +71,36 @@ body {
         
         padding: 10px 25px 10px 5px;
         box-shadow: 0 0 20px 3px $book-paper-color;
+        display: flex;
 
         @include media-query-in-tablet() {
             margin-left: 50px;
+            margin-top: 50px;
         }
-
+        
+        // in real write contents layer
         .paper-layer {
             border-radius: 10px;
-            width: 100%;
-            height: 100%;
+            width: 93%;
+            height: 98%;
+            
+            padding: 10px 30px 10px 20px;
             background-color: $book-paper-color;
             overflow-y: scroll;
+
+            &::-webkit-scrollbar {
+                width: 12px;
+                height: 6px;
+
+                margin: 4px;
+
+                border-radius: 6px;
+                background: $scroll-background-color;
+            }
+            &::-webkit-scrollbar-thumb {
+                background-color: $scroll-color;
+                border-radius: 6px;
+            }
         }
     }
     @include media-query-in-mobile() {
