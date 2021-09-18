@@ -34,7 +34,7 @@ $scroll-color: rgba(86, 9, 6, 0.4);
 
 // media width
 $media-line-width-tablet: 1200px;
-$media-line-width-mobile: 840px;
+$media-line-width-mobile: 760px;
 
 @mixin media-query-in-desktop() {
     @media screen and (min-width: $media-line-width-tablet) {
