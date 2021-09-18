@@ -6,29 +6,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Song+Myung&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&displayswap');
+
 
 $base-url: "{{ site.baseurl }}";
 $write-font-family: 'Noto Serif KR', serif; // 내용 작성할 때 쓰는 폰트
 $user-info-font-family: 'Song Myung', serif; // 좌측 블로그 운영자 정보 적어넣을 때 사용
 $post-tape-font-family: 'Hi Melody', cursive; // 우측 포스트 테입 폰트
+$diary-font-family: 'Hi Melody', cursive; // 다이어리 전용 폰트
+$code-font-family: 'Nanum Gothic Coding', monospace; //코드 폰트
 
 // body wallpaper
 $body-wallpaper: url('{{ site.baseurl }}/assets/img/wallpaper.jpg');
-
-// media width
-$media-line-width: 900px;
 
 // Color
 $book-cover-color: #560906;
 $book-paper-color: #FFF8E9;
 
+$post-paper-index-color: #FFF4AB;
+$post-paper-contents-color: #D0FFC7;
+$post-paper-diary-color: #D1DAFF;
+
+
+// media width
+$media-line-width-tablet: 1200px;
+$media-line-width-mobile: 840px;
+
 @mixin media-query-in-desktop() {
-    @media screen and (min-width: $media-line-width) {
+    @media screen and (min-width: $media-line-width-tablet) {
+        @content;
+    }
+}
+@mixin media-query-in-tablet() {
+    @media screen and (min-width: $media-line-width-mobile) and (max-width: $media-line-width-tablet) {
         @content;
     }
 }
 @mixin media-query-in-mobile() {
-    @media screen and (max-width: $media-line-width) {
+    @media screen and (max-width: $media-line-width-mobile) {
         @content;
     }
 }

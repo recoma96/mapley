@@ -1,0 +1,89 @@
+// global 하게 사용되는 요소를 작성하는데 사용하는 파일 입니다.
+
+// headings
+h1,h2,h3,h4,h5,h6 {
+    font-family: $write-font-family;
+}
+
+// normal font
+p, blockquote, pre,
+ul, ol, dl,
+figure {
+    font-family: $write-font-family;
+    word-wrap: break-word;
+}
+// code font
+pre, code {
+    font-family: $code-font-family;
+    word-wrap: break-word;
+}
+
+// body wallpaper
+/*
+    left 30%: user content
+    center 900px: write content
+*/
+body {
+    background-image: $body-wallpaper;
+    background-size: cover;
+}
+// body opacity
+.content-layer {
+    position: absolute;
+    background-color: rgba(0,0,0,0.57);
+    width: 100%;
+    height: 93vh;
+    top: 0;
+    left: 0;
+    
+    @include media-query-in-desktop() {
+        padding: 30px;
+    }
+}
+
+.desktop-area {
+    width: 100%;
+    height: 100%;
+    display: flex;
+
+    // in user layer
+    .user-layer {
+        width: 40%;
+        background-color: transparent;
+        height: 400px;
+
+        // in table must be disabled
+        @include media-query-in-tablet() {
+            display: none;
+        }
+    }
+
+    // In book area
+    .book-cover-layer {
+        height: 850px;
+        width: 700px;
+        background-color: $book-cover-color;
+    
+        margin-left: 20px;
+        margin-right: 65px;
+        border-radius: 10px;
+        
+        padding: 10px 25px 10px 5px;
+        box-shadow: 0 0 20px 3px $book-paper-color;
+
+        @include media-query-in-tablet() {
+            margin-left: 50px;
+        }
+
+        .paper-layer {
+            border-radius: 10px;
+            width: 100%;
+            height: 100%;
+            background-color: $book-paper-color;
+            overflow-y: scroll;
+        }
+    }
+    @include media-query-in-mobile() {
+        display: none;
+    }
+}
