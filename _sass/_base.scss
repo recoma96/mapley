@@ -75,7 +75,7 @@ body {
     width: 100%;
     height: 100%;
     overflow-x: hidden;
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0,0,0,0.1);
     top: 0;
     left: 0;
     
@@ -94,7 +94,7 @@ body {
     .user-layer {
         width: 35%;
         background-color: transparent;
-        color: white;
+        color: black;
         font-family: $user-info-font-family;
 
         .user-image {
@@ -104,11 +104,18 @@ body {
             border-radius: 50%;
             box-shadow: 0 0 20px 3px $book-paper-color;
         }
+        .summary-layer {
+            width: 60%;
+            padding: 15px;
+            background-color: $user-info-background-color;
+            box-shadow: 6px 3px 6px black;
+            border-radius: 6px;
+        }
         .title-layer {
-            margin-top: -30px;
+            width: 100%;
         }
         .introduce-layer {
-            width: 50%;
+            width: 90%;
         }
 
         // in table must be disabled
@@ -121,13 +128,14 @@ body {
     .book-cover-layer {
         height: 88vh;
         width: 700px;
-        background-color: $book-cover-color;
+        background-image: $bookcover-texture;
+        background-repeat: repeat;
     
         margin-left: 20px;
         border-radius: 10px;
         
         padding: 20px 25px 20px 5px;
-        box-shadow: 0 0 20px 3px $book-paper-color;
+        box-shadow: 3px 5px 20px 10px black;
         display: flex;
 
         @include media-query-in-tablet() {

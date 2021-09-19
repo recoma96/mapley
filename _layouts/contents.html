@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html>
     {% include head.html %}
+
+    <!-- Calculate -->
+    {% assign posts = site.posts | sort: "category" %}
+    
+
     <body>
         <!-- Content Area -->
         <div class="content-layer">
             <!-- On Desktop -->
             <div class="desktop-area">
                 <!-- User Area -->
-                <div class="user-layer">
-                    <center>
-                        <img class="user-image" alt="user image"/>
-                        <h1 class="title-layer">{{ site.username }}</h1>
-                        <h3 class="introduce-layer">{{ site.introduce }}</h3>
-                    </center>
-                </div>
+                {% include user-info-desktop.html %}
                 <!-- Book Area -->
                 <div class="book-cover-layer">
                     <div class="paper-layer">
@@ -22,7 +21,6 @@
                         </center>
 
                         <div class="content-page-layer">
-                            {% assign posts = site.posts | sort: "category" %}
                             <h1>{{ categories }}</h1>
                             
                             <!-- Last post for search new Category -->

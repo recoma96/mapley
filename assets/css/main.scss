@@ -20,11 +20,13 @@ $tag-badge-font-family: 'Hi Melody', cursive; // 태그 뱃지 전용 폰트
 // body wallpaper
 $body-wallpaper: url('{{ site.baseurl }}/assets/img/wallpaper.jpg');
 $user-image: url('{{ site.baseurl }}/assets/img/user.gif');
+$bookcover-texture: url('{{ site.baseurl }}/assets/img/book-texture.gif');
 
 // Color
 $book-cover-color: #560906;
 $book-paper-color: #FFF8E9;
 $default-badge-color: #570A06;
+$user-info-background-color: #faffb4;
 
 $post-paper-index-color: #FFF4AB;
 $post-paper-contents-color: #D0FFC7;
