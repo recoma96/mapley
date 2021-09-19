@@ -57,6 +57,7 @@ body {
     width: 100%;
     height: 100%;
     margin: -10px 0;
+    display: flex;
 }
 
 // tag badge
@@ -90,6 +91,13 @@ body {
     height: 100%;
     display: flex;
 
+    @include media-query-in-tablet() {
+        display: block;
+    }
+    @include media-query-in-mobile() {
+        display: block;
+    }
+
     // in user layer
     .user-layer {
         width: 35%;
@@ -120,10 +128,32 @@ body {
             width: 90%;
         }
 
-        // in table must be disabled
+        // in table and mobile must be disabled
         @include media-query-in-tablet() {
             display: none;
         }
+        @include media-query-in-mobile() {
+            display: none;
+        }
+    }
+
+    .mobile-navbar {
+        width: 100%;
+        padding-top: 5px 0px 5px 0px;
+        box-shadow: 0px 5px 5px black;
+        background-color: $book-cover-color;
+        color: white;
+        position: fixed;
+
+        // Only Mobile
+        @include media-query-in-desktop() {
+            display: none;
+        }
+        
+    }
+    // clicked
+    .mobile-navbar:active {
+        background-color: $clicked-mobile-navbar-color;
     }
 
     // In book area
@@ -141,8 +171,22 @@ body {
         display: flex;
 
         @include media-query-in-tablet() {
-            margin-left: 50px;
-            margin-top: 50px;
+            width: 100%;
+            height: 100%;
+            margin-left: 0px;
+            background-image: none;
+            background-color: transparent;
+            padding: 0px;
+        }
+
+        // No bookcover
+        @include media-query-in-mobile() {
+            width: 100%;
+            height: 100%;
+            margin-left: 0px;
+            background-image: none;
+            background-color: transparent;
+            padding: 0px;
         }
         
         // in real write contents layer
@@ -168,6 +212,14 @@ body {
                 background-color: $scroll-color;
                 border-radius: 6px;
             }
+            @include media-query-in-tablet() {
+                overflow: hidden;
+            }
+
+            @include media-query-in-mobile() {
+                overflow: hidden;
+                padding: 70px 15px 30px 15px;
+            }
         }
     }
     .content-post-layer {
@@ -175,7 +227,7 @@ body {
         margin-right: 65px;
         margin-top: 20px;
         
-        .papaer {
+        .paper {
             padding: 15px 2px 15px 2px;
             font-family: $post-papaer-font-family;
             color: black;
@@ -194,7 +246,43 @@ body {
         #diary { background-color: $post-paper-diary-color; }
         
         @include media-query-in-tablet() {
-            margin-top: 70px;
+            display: none;
         }
+        @include media-query-in-mobile() {
+            display: none;
+        }
+    }
+}
+
+// Drawer For Tablet & Mobile
+.contents-drawer {
+    position: absolute;
+    padding-top: 100px;
+    display: none;
+
+    .paper {
+        padding: 15px 2px 15px 2px;
+        font-family: $post-papaer-font-family;
+        color: black;
+        writing-mode: vertical-rl;
+        font-size: 1.7em;
+        border-radius: 6px;
+        box-shadow: 6px 3px 6px black;
+        margin-bottom: -10px;
+
+        @include media-query-in-tablet() {
+            font-size: 2em;
+        }
+    }
+    .underline-remover {
+        text-decoration: none;
+    }
+
+    #index { background-color: $post-paper-index-color; }
+    #contents { background-color: $post-paper-contents-color; }
+    #diary { background-color: $post-paper-diary-color; }
+
+    @include media-query-in-desktop() { 
+        display: none;
     }
 }

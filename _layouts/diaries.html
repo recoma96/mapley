@@ -2,11 +2,17 @@
 <html>
     {% include head.html %}
     <body>
+        <!-- Right Navbar For Moble / Tablet -->
+        {% include contents-drawer.html %}
+
         <!-- Content Area -->
         <div class="content-layer">
             <div class="layer">
                 <!-- User Area -->
                 {% include user-info-desktop.html %}
+                <!-- Navbar Area (Only Mobile & Tablet) -->
+                {% include mobile-navbar.html %}
+                
                 <!-- Book Area -->
                 <div class="book-cover-layer">
                     <div class="paper-layer">
@@ -39,5 +45,6 @@
                 {% include postpaper-navbar.html %}
             </div>
         </div>
+        {% include foot.html %}
     </body>
 </html>
