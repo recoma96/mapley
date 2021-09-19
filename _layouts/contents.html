@@ -63,7 +63,8 @@
                                     {% assign post_title_print = post_numbering_print | append: " " | append: post.title %}
 
                                     <!-- Make url -->
-                                    {% assign content_url = post.url | replace:".html","" | prepend: site.url %}
+                                    {% assign site_url = site.url | append: site.baseurl %}
+                                    {% assign content_url = post.url | replace:".html","" | prepend: site_url %}
 
                                     <!-- Print it -->
                                     <p class="contents-text-item">

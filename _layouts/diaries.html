@@ -30,7 +30,8 @@
                                 {% assign title = date_format | append: " - " | append: post.title %}
 
                                 <!-- Make url -->
-                                {% assign diary_url = post.url | replace:".html","" | prepend: site.url %}
+                                {% assign site_url = site.url | append: site.baseurl %}
+                                {% assign diary_url = post.url | replace:".html","" | prepend: site_url %}
                                     
                                 <p class="diary-text-item">
                                     <a href={{ diary_url }} >{{ title }}</a>

@@ -5,7 +5,7 @@
 layout: home
 title: This Is the Introduce
 profile_picture:
-    src: /assets/img/content/index-img.jpg
+    src: ./assets/img/content/index-img.jpg
     alt: website picture
 ---
 
