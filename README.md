@@ -58,6 +58,3 @@ type: diary
 tags: [tag array] (ex: ["tag1", "tag2" ...])
 ---
 ```
-
-
-# Writing Posts
