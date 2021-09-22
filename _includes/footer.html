@@ -1,5 +1,25 @@
 <div>
     <div class="post-end-line"></div>
+    
+        <div class="contact-in-mobile">
+            <div class="contact-line">
+                <p>contact</p>
+                {% for c in site.links.contact %}
+                    <div>
+                        <p><a href="{{ c.link }}">{{ c.name }}</a></p>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="line"></div>
+            <div class="follow-line">
+                <p>follow</p>
+                {% for f in site.links.follow %}
+                    <div>
+                        <p><a href="{{ f.link }}">{{ f.name }}</a></p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
     <center>
        <p style="font-size: 0.8em">powered by <a href="https://github.com/Vector-7/mapley">mapley</a> | 2021</p>
     </center>

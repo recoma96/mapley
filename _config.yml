@@ -25,6 +25,19 @@ kramdown:
   input: GFM
   syntax_highlighter: rouge
 
+links:
+  contact:
+    - name: email
+      value: seokbong60@gmail.com
+      link: mailto:seokbong60@gmail.com
+  follow:
+    - name: github
+      link: https://github.com/Vector-7
+    - name: youtube
+      link: https://www.youtube.com/channel/UCE8PYLb_Cw1dkkvIOMHLCiA
+    - name: soundcloud
+      link: https://soundcloud.com/dj4zokfdkjb5
+
 sass:
   style: compressed
 
