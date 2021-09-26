@@ -1,5 +1,5 @@
 # mapley
-<img src="./readme-assets/main-demo.GIF" width="68%"> <img src="./readme-assets/main-demo-mobile.GIF" width="24%">
+<img src="./readme-assets/main-demo.GIF" width="68%"> <img src="./readme-assets/main-demo-mobile.GIF" width="24%"> <br >
 **mapley** is **Jekyll Theme** that is an autumn & reading book style This is My First Jekyll theme for learning more about Jekyll. So It has some bug, but I'm going to do making and debugging this for better.
 
 # Installation
