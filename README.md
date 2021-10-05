@@ -32,6 +32,7 @@ username: [your nickname]
 introduce: [summary about yourself]
 ```
 
+
 # How to write posts
 ## In contents(Post)
 make new markdown file to ```_posts``` and write config like this
